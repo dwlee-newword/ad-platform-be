@@ -51,7 +51,7 @@ public class DataInitializer implements ApplicationRunner {
             Company company3 = companyRepository.getReferenceById(10003L);
             Company company4 = companyRepository.getReferenceById(10004L);
             Company company5 = companyRepository.getReferenceById(10005L);
-            Product product = productRepository.findAll().get(0);
+            Product product = productRepository.findAll().getFirst();
 
             contractRepository.saveAll(List.of(
                 Contract.builder()
