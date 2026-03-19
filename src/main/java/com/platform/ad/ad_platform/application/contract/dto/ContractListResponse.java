@@ -7,6 +7,8 @@ import java.time.LocalDate;
 
 public record ContractListResponse(
         Long id,
+        String contractNumber,
+        LocalDate contractDate,
         String companyName,
         String productName,
         LocalDate startDate,
@@ -18,6 +20,8 @@ public record ContractListResponse(
     public static ContractListResponse of(Contract contract) {
         return new ContractListResponse(
                 contract.getId(),
+                contract.getContractNumber(),
+                contract.getContractDate(),
                 contract.getCompany().getName(),
                 contract.getProduct().getName(),
                 contract.getStartDate(),

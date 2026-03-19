@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 public record ContractDetailResponse(
         Long id,
+        String contractNumber,
         Long companyId,
         String companyName,
         Long productId,
@@ -20,6 +21,7 @@ public record ContractDetailResponse(
     public static ContractDetailResponse of(Contract contract) {
         return new ContractDetailResponse(
                 contract.getId(),
+                contract.getContractNumber(),
                 contract.getCompany().getId(),
                 contract.getCompany().getName(),
                 contract.getProduct().getId(),
